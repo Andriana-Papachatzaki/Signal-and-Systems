@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Δημιουργία χρονικού άξονα
+T = 20  # Συνολική διάρκεια
+fs = 1000  # Συχνότητα δειγματοληψίας
+N = int(T * fs)  # Αριθμός δειγμάτων
+t = np.linspace(-T/2, T/2, N, endpoint=False)
+
+xe = 1/t * np.sin(1.25 * t)
+
+# Δημιουργία γραφημάτων
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 1, 1)
+plt.plot(t, xe, label='xe(Ω)', color='g')
+plt.xlabel('Hz')
+plt.ylabel('Amplitude')
+plt.title('xe(Ω)')
+plt.legend()
+plt.grid()
+
+# Προβολή γραφημάτων
+plt.tight_layout()
+plt.show()
